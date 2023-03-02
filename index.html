@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./Assets/css/index.css">
 </head>
 
 <body>
@@ -15,13 +16,26 @@
     <div class="row">
       <div class="col s12">
         <h1>Code Quiz</h1>
+        <a id="start" class="waves-effect waves-light btn">Start</a>
+        
+        <p id="timer">
+          Timer:<span id="timeRemaining"></span>
+        </p>
       </div>
-      <div class="col"></div>
+        <div id="questOps" class="row hidden">
+        <div id="questionDiv" class="col s12 m6 ">Questions</div>
+        <div id="optionDiv" class="col s12 m6 ">Options</div>
+      </div>
     </div>
   </div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./Assets/js/style.js"></script>
+  <div class="high-score">
+    <h2>Gamer over!</h2>
+    <p>Your score: <span id="score"></span>"</p>
+  </div>
 </body>
 
 
