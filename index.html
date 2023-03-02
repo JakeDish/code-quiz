@@ -18,7 +18,7 @@
         <h1>Code Quiz</h1>
         <a id="start" class="waves-effect waves-light btn">Start</a>
         
-        <p id="timer">
+        <p id="timer" class="hidden">
           Timer:<span id="timeRemaining"></span>
         </p>
       </div>
@@ -32,9 +32,12 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./Assets/js/style.js"></script>
-  <div class="high-score">
-    <h2>Gamer over!</h2>
-    <p>Your score: <span id="score"></span>"</p>
+  <div id="high-score" class="hidden">
+    <h2 class="high-score">Game over!</h2>
+    <p class="high-score">Your score: <span id="score"></span></p>
+    <div style="text-align: center">
+      <button id="save-score" type="button" class="high-score">Save my score</button>
+    </div>
   </div>
 </body>
 

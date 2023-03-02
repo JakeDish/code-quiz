@@ -2,7 +2,9 @@ currentQuestion = 0;
 var secondsLeft = 60;
 var timeEl = document.getElementById("timeRemaining");
 var questionDiv = document.getElementById("questionDiv");
-var gameWon = false
+var gameDone = false
+var timerInterval
+
 
 let questions = [
   {
@@ -51,30 +53,55 @@ const displayQuestion = () => {
 const checkAnswer = (event) => {
   if (event.target.value != questions[currentQuestion].answer) {
     alert("wrong!");
-    secondsLeft = secondsLeft -10
+    secondsLeft = secondsLeft -5
   } else {
     alert("right!");
-  
+//  if {
+
+//  }
   currentQuestion++
   displayQuestion()
   }
 };
 
+
+
 const timer = () => {
-  var timerInterval = setInterval(function () {
+  
+  timerInterval = setInterval(function () {
+    if(gameDone === true) {
+      return
+    }
+    else {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
 
     if (secondsLeft === 0) {
+      //pauseInterval(timer.timerInterval)
       gameOver();
-      clearInterval(timerInterval);
+        
+      //clearInterval(timerInterval);
+    }
     }
   }, 1000);
 };
 
-const gameOver = () => {
-  clearInterval(secondsLeft)
+//const pause(){
+//  pause timer()
+//}
 
+const gameOver = () => {
+  gameDone = true
+  //pause()
+  //pauseInterval(timer.timerInterval);
+  document.getElementById("questOps").classList.add("hidden");
+  document.getElementById("timer").classList.add("hidden");
+  document.getElementById("high-score").classList.remove("hidden");
+  document.getElementById("score").innerHTML = secondsLeft
+  document.getElementById("start").classList.add("hidden");
+document.getElementById("save-score").addEventListener("click", function () {
+  alert(secondsLeft);
+});
 };
 
 document.addEventListener("click", (event) => {
@@ -85,6 +112,13 @@ document.addEventListener("click", (event) => {
 
 document.getElementById("start").addEventListener("click", (event) => {
   document.getElementById("questOps").classList.remove("hidden");
+  document.getElementById("timer").classList.remove("hidden");
   displayQuestion();
   timer();
 });
+
+
+
+//(event) => {
+//console.log("secondsLeft")
+//})

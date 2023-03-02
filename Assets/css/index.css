@@ -3,6 +3,17 @@
 }
 
 .high-score {
-  display: none;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
 }
 
+button {
+  text-align: center;
+  justify-content: center;
+}
+
+.save-score {
+    justify-content: center;
+  text-align: center;
+}
